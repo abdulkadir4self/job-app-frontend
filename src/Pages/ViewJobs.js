@@ -17,7 +17,9 @@ function ViewJobs(){
 
     useEffect(function(){
         dispatch( viewJobs() )
-          
+       jobSlice.jobs.map((job)=>{console.log(job);
+       })
+         
         
     }, [])
 

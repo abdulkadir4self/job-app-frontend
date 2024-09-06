@@ -15,6 +15,10 @@ function Login (){
         return state.authSlice.isLoggedIn
     });
 
+    const message = useSelector(function(state){
+        return state.authSlice.message
+    });
+
     useEffect( function(){
         if(isAdmin){
             navigate('/admin')
@@ -45,7 +49,7 @@ const loginUser = (e)=>{
     e.preventDefault();
     dispatch(loginAction(formData));
     <Toaster position="top-center" />
-    toast.success("you have logged in")
+    toast.custom(message)
     updateFormdata({
         email: '',
         password: ''  
